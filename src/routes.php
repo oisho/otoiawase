@@ -11,29 +11,29 @@
 
 $app->get('/contact', function ($request, $response, $args) {
     //まだ未作成
-    $action = new Slim\App\Contact
-    $action -> run();
+    // $action = new Slim\App\Contact
+    // $action -> run();
 
     //まだ未作成
-    return $this->renderer->render($response, 'contact.html', $args);
+    return $this->renderer->render($response, 'contact.php', $args);
 });
 
 
-$app->get('/confirm/{}', function ($request, $response, $args) {
+$app->get('/confirm', function ($request, $response, $args) {
     //まだ未作成
-    $action = new Slim\App\Confirm
-    $action -> run();
+    // $action = new Slim\App\Confirm
+    // $action -> run();
 
     //まだ未作成
-    return $this->renderer->render($response, 'confirm.html', $args);
+    return $this->renderer->render($response, 'confirm.php', $args);
 });
 
 
 $app->get('/completion', function ($request, $response, $args) {
     //まだ未作成
-    $action = new Slim\App\Completion
-    $action -> run();
+    // $action = new Slim\App\Completion
+    // $action -> run();
 
     //まだ未作成
-    return $this->renderer->render($response, 'completion.html', $args);
+    return $this->renderer->render($response, 'completion.php', $args);
 });
