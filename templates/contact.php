@@ -8,7 +8,7 @@
 <body>
   ご意見、ご苦情、愛の告白、ええ意見などございましたらこちらから
   <div id="container">
-    <form action="" method="post" id="contact">
+    <form action="confirm" method="post" id="contact">
       <p>
         <input type="text" name="name" placeholder="name" value="">
       </p>
@@ -22,7 +22,10 @@
       <p>
         <textarea name="opinion" rows="4" cols="40" placeholder="こちらに本文を記入してください"></textarea>
       </p>
-      <p class="next"><a href="/confirm">次へ</a></p>
+      <p>
+      <input type="submit" name="submit" value="次へ" />
+      </p>
+      <!-- <p class="next"><a href="/confirm">次へ</a></p>エラーがないときだけ進めるように -->
     </form>
   </div>
 </body>

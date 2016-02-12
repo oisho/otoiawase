@@ -8,22 +8,25 @@
 <body>
   本当にこれで大丈夫？？
   <div id="container">
-    <form action="" method="post" id="contact">
       <p>
-        <input type="text" name="name" placeholder="name" value="">
+        お名前
       </p>
       <p>
-      <!-- お名前エラーメッセージ -->
+        <?php echo $_POST['name'] ?>
+      </p>
+       
+      <p>
+        email
       </p>
       <p>
-        <input type="email" name="email" placeholder="email" value="">
+        <?php echo $_POST['email'] ?>
       </p>
-      <!-- emailエラーメッセージ -->
       <p>
-        <textarea name="opinion" rows="4" cols="40" placeholder="こちらに本文を記入してください"></textarea>
+        本文
       </p>
-      <p class="next"><a href="/confirm">次へ</a></p>
-    </form>
+      <p>
+        <?php echo $_POST['opinion'] ?>
+      </p>
   </div>
 </body>
 </html>
