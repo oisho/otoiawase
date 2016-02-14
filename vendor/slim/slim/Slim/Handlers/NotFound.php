@@ -119,7 +119,7 @@ class NotFound
      */
     protected function renderHtmlNotFoundOutput(ServerRequestInterface $request, ResponseInterface $response)
     {
-        $homeUrl = (string)($request->getUri()->withPath('')->withQuery('')->withFragment(''));
+        $homeUrl = (string)($request->getUri()->withPath('/contact')->withQuery('')->withFragment(''));
         return <<<END
 <html>
     <head>
@@ -141,6 +141,15 @@ class NotFound
                 width:65px;
             }
         </style>
+        <SCRIPT language="JavaScript">
+        // 一定時間経過後に指定ページにジャンプする
+        var wait = 5; // 何秒後に移動するか？
+        var url = "/contact"; // 移動するアドレス
+        function jumpPage() {
+          location.href = url;
+        }
+        setTimeout("jumpPage()",wait*1000)
+        </SCRIPT>
     </head>
     <body>
         <h1>Page Not Found</h1>
@@ -149,7 +158,8 @@ class NotFound
             to ensure your URL is spelled correctly. If all else fails, you can
             visit our home page at the link below.
         </p>
-        <a href='$homeUrl'>Visit the Home Page</a>
+        <p>ちな、5秒で移動するでー</p>
+        <a href='$homeUrl'>移動できなきゃこっちね。Visit the Home Page</a>
     </body>
 </html>
 END;

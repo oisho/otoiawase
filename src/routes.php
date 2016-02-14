@@ -9,7 +9,7 @@
 //     return $this->renderer->render($response, 'index.phtml', $args);
 // });
 
-$app->get('/contact', function ($request, $response, $args) {
+$app->map(['get', 'post'],'/contact', function ($request, $response, $args) {
     //まだ未作成
     // $action = new Slim\App\Contact
     // $action -> run();
@@ -29,7 +29,7 @@ $app->post('/confirm', function ($request, $response, $args) {
 });
 
 
-$app->get('/completion', function ($request, $response, $args) {
+$app->post('/completion', function ($request, $response, $args) {
     //まだ未作成
     // $action = new Slim\App\Completion
     // $action -> run();
@@ -39,11 +39,11 @@ $app->get('/completion', function ($request, $response, $args) {
 });
 
 
-$app->any('/{/^a*$/}', function ($request, $response, $args) {
-    //まだ未作成
-    // $action = new Slim\App\Contact
-    // $action -> run();
+// $app->any('/{/^a*$/}', function ($request, $response, $args) {
+//     //まだ未作成
+//     // $action = new Slim\App\Contact
+//     // $action -> run();
 
-    //まだ未作成
-    return $this->renderer->render($response, 'contact.php', $args);
-});
+//     //まだ未作成
+//     return $this->renderer->render($response, 'contact.php', $args);
+// });

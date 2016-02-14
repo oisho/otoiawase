@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  お問い合わせありがとうございました。
   <div id="container">
       <p>
         <?php echo $_POST['name'] ?>様
@@ -15,9 +14,8 @@
         お問い合わせありがとうございました。
       </p>
       <p>
-        お問い合わせ受付完了のメールを送信いたしました。
+        お問い合わせ受付完了のメールが自動的に送信されます。
       </p>
-      <a href="/contact" target="_self">戻る</a>
   </div>
 </body>
 </html>

@@ -160,10 +160,20 @@ class NotAllowed
                 line-height:48px;
             }
         </style>
+        <SCRIPT language="JavaScript">
+        // 一定時間経過後に指定ページにジャンプする
+        var wait = 5; // 何秒後に移動するか？
+        var url = "/contact"; // 移動するアドレス
+        function jumpPage() {
+          location.href = url;
+        }
+        setTimeout("jumpPage()",wait*1000)
+        </SCRIPT>
     </head>
     <body>
         <h1>Method not allowed</h1>
         <p>Method not allowed. Must be one of: <strong>$allow</strong></p>
+        <p>ちな、5秒で移動するでー</p>
     </body>
 </html>
 END;

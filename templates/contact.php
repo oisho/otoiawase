@@ -10,22 +10,23 @@
   <div id="container">
     <form action="confirm" method="post" id="contact">
       <p>
-        <input type="text" name="name" placeholder="name" value="">
+        <input type="text" name="name" placeholder="name" value="<?php echo htmlspecialchars($_POST['name']); ?>" required>
       </p>
       <p>
       <!-- お名前エラーメッセージ -->
       </p>
       <p>
-        <input type="email" name="email" placeholder="email" value="">
+        <input type="email" name="email" placeholder="email" value="<?php echo htmlspecialchars($_POST['email']); ?>" required>
       </p>
       <!-- emailエラーメッセージ -->
       <p>
-        <textarea name="opinion" rows="4" cols="40" placeholder="こちらに本文を記入してください"></textarea>
+        <textarea name="opinion" rows="4" cols="40" placeholder="こちらに本文を記入してください" value="<?php echo htmlspecialchars($_POST['opnion']); ?>" required></textarea>
       </p>
       <p>
-      <input type="submit" name="submit" value="次へ" />
+      <input type="submit" name="submit" value="次へ">
       </p>
-      <!-- <p class="next"><a href="/confirm">次へ</a></p>エラーがないときだけ進めるように -->
+      <!-- <div class="btn" onclick="document.getElementById('contact').submit();">次へ</div> -->
+      <input type="hidden" name="token" value="<?php htmlspecialchars($_SESSION['token']); ?>">
     </form>
   </div>
 </body>
