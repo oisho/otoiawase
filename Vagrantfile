@@ -43,7 +43,7 @@ Vagrant.configure(2) do |config|
     owner: 'vagrant',
     group: 'vagrant',
     rsync__chown: true,
-    rsync__exclude: ['.git/', 'logs/']
+    rsync__exclude: ['.git/', 'logs/', 'vendor/']
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
