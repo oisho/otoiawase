@@ -20,7 +20,7 @@
       </p>
       <!-- emailエラーメッセージ -->
       <p>
-        <textarea name="opinion" rows="4" cols="40" placeholder="こちらに本文を記入してください" value="<?php echo htmlspecialchars($_POST['opnion']); ?>" required></textarea>
+        <textarea name="opinion" rows="4" cols="40" placeholder="こちらに本文を記入してください" required><?php echo htmlspecialchars($_POST['opinion']); ?></textarea>
       </p>
       <p>
       <input type="submit" name="submit" value="次へ">

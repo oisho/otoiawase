@@ -8,7 +8,7 @@
 <body>
   <div id="container">
       <p>
-        <?php echo $_POST['name'] ?>様
+        <?php echo htmlspecialchars($_POST['name']); ?>様
       </p>
       <p>
         お問い合わせありがとうございました。

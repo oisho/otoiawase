@@ -33,11 +33,12 @@
       <input type="hidden" name="opinion" value="<?php echo htmlspecialchars($_POST['opinion']); ?>">
       <input type="submit" name="submit" value="戻る">
     </form>
+    　
     <form action="completion" method="post" id="confirm">
       <input type="hidden" name="name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
       <input type="hidden" name="email" value="<?php echo htmlspecialchars($_POST['email']); ?>">
       <input type="hidden" name="opinion" value="<?php echo htmlspecialchars($_POST['opinion']); ?>">
-      <!-- <a href="/completion" target="_self">投稿する</a> -->
+      <input type="hidden" name="time" value="<?php echo date("Y-m-d H:i:s"); ?>">
       <input type="submit" name="submit" value="投稿する">
     </form>
     </div>
