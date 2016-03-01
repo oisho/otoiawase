@@ -1,0 +1,38 @@
+<?php
+require 'vendor/autoload.php';
+session_start();
+
+$app = new \Slim\Slim(array(
+    'debug' => true,
+));
+
+$app->get('/form', function () use ($app) {
+    echo $app->render('form.php', array(
+        'errors' => isset($_SESSION['errors']) ? $_SESSION['errors'] : array(),
+        'params' => isset($_SESSION['params']) ? $_SESSION['params'] : array(),
+    ));
+    unset($_SESSION['params']);
+    unset($_SESSION['errors']);
+});
+
+$app->post('/commit', function () use ($app) {
+    $params = $app->request->post();
+    $errors = array();
+    if ($params['title'] === '') {
+        $errors['title'] = 'タイトルが空です';
+    }
+    if (preg_match("/^\d+$/", $params['number']) == false) {
+        $errors['number'] = '価格には数値を入れてください';
+    }
+    if (count($errors) > 0) {
+        $_SESSION['params'] = $params;
+        $_SESSION['errors'] = $errors;
+        $app->flash('error', '入力に誤りがあります');
+        $app->response()->redirect('/form');
+        $app->stop();
+    } else {
+        // エラーがなかった時の処理をここに書く
+    }
+});
+
+$app->run();

@@ -8,24 +8,34 @@
 //     // Render index view
 //     return $this->renderer->render($response, 'index.phtml', $args);
 // });
+// echo get_class_methods($app)."@route";
 
 $app->map(['get', 'post'],'/contact', function ($request, $response, $args) {
-    //まだ未作成
-    // $action = new Slim\App\Contact
-    // $action -> run();
 
-    //まだ未作成
+    $contact = new App\Controller\Contact();
+    $contact -> run();
+
     return $this->renderer->render($response, 'contact.php', $args);
-});
+
+})->setName('contact');
 
 
 $app->post('/confirm', function ($request, $response, $args) {
     //まだ未作成
-    // $action = new Slim\App\Confirm
-    // $action -> run();
 
-    //まだ未作成
-    return $this->renderer->render($response, 'confirm.php', $args);
+    $_SESSION['confirm'] = "";
+
+    $confirm = new App\Controller\Confirm();
+    $a = $confirm -> run();
+    
+    if ($a) {
+        return $this->renderer->render($response, 'confirm.php', $args);
+    } else {
+        $_SESSION['err'] = true;
+        return $response
+        ->withStatus(302)
+        ->withHeader('Location', '/contact');
+    }
 });
 
 

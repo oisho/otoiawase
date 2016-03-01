@@ -8,7 +8,7 @@
 <body>
   <div id="container">
       <p>
-        <?php echo htmlspecialchars($_POST['name']); ?>様
+        <?php echo htmlspecialchars($_SESSION['name']); ?>様
       </p>
       <p>
         お問い合わせありがとうございました。
@@ -16,6 +16,10 @@
       <p>
         お問い合わせ受付完了のメールが自動的に送信されます。
       </p>
+      <a href = "/contact">
+        戻る
+      </a>
   </div>
+
 </body>
 </html>
