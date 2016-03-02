@@ -37,23 +37,24 @@ function check(){
   <div id="container">
     <form action="confirm" method="post" id="contact">
       <p>
-        <input type="text" name="name" placeholder="Name" value="<?php echo htmlspecialchars($_POST['name']); ?>" required id="namen">
+        <input type="text" name="name" placeholder="Name" value="<?php echo htmlspecialchars($_SESSION['name']); ?>"  id="namen">
       </p>
       <p>
       <!-- お名前エラーメッセージ -->
       </p>
       <p>
-        <input type="email" name="email" placeholder="E-Mail" value="<?php echo htmlspecialchars($_POST['email']); ?>" required id="mail">
+        <input type="email" name="email" placeholder="E-Mail" value="<?php echo htmlspecialchars($_SESSION['email']); ?>" required id="mail">
       </p>
       <!-- emailエラーメッセージ -->
       <p>
-        <textarea name="opinion" rows="4" cols="40" placeholder="こちらに本文を記入してください" required id="opinion"><?php echo htmlspecialchars($_POST['opinion']); ?></textarea>
+        <textarea name="opinion" rows="4" cols="40" placeholder="こちらに本文を記入してください" required id="opinion"><?php echo htmlspecialchars($_SESSION['opinion']); ?></textarea>
       </p>
+      <p class="err"><?php echo $_SESSION['confirm']; ?></p>
       <p>
       <input type="submit" name="submit" value="確認画面へ" id="btn">
       </p>
        <!-- <div class="btn" onclick="document.getElementById('contact').submit();">確認画面</div> -->
-       <input type="hidden" name="token" value="<?php htmlspecialchars($_SESSION['token']); ?>">
+       <input type="hidden" name="token" value="<?php echo htmlspecialchars($_SESSION['token']); ?>">
     </form>
   </div>
   <audio autoplay src="overworld.mp3"></audio>
