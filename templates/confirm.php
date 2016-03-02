@@ -7,7 +7,7 @@
 </head>
 
 <body>
-
+<section class="box fourcorners">
   <h1>CHECK OUT</h1>
   <p>内容に誤りがないか、マジでご確認ください！</p>
   <div id="container">
@@ -29,7 +29,6 @@
       <input type="hidden" name="opinion" value="<?php echo htmlspecialchars($_POST['opinion']); ?>">
       <input type="submit" name="submit" value="戻る" id="btn">
     </form>
-    　
     <form action="completion" method="post" id="confirm">
       <input type="hidden" name="name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
       <input type="hidden" name="email" value="<?php echo htmlspecialchars($_POST['email']); ?>">
@@ -37,6 +36,7 @@
       <input type="hidden" name="time" value="<?php echo date("Y-m-d H:i:s"); ?>">
       <input type="submit" name="submit" value="投稿する" id="btn">
     </form>
+      <audio autoplay src="hurry-overworld.mp3"></audio>
     </div>
   </div>
   </section>
