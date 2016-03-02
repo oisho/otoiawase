@@ -57,6 +57,7 @@ function check(){
        <input type="hidden" name="token" value="<?php echo htmlspecialchars($_SESSION['token']); ?>">
     </form>
   </div>
+  <audio autoplay src="overworld.mp3"></audio>
   </section>
 </body>
 </html>

@@ -21,7 +21,6 @@ $app->map(['get', 'post'],'/contact', function ($request, $response, $args) {
 
 
 $app->post('/confirm', function ($request, $response, $args) {
-    //まだ未作成
 
     $_SESSION['confirm'] = "";
 
@@ -41,8 +40,9 @@ $app->post('/confirm', function ($request, $response, $args) {
 
 $app->post('/completion', function ($request, $response, $args) {
     //まだ未作成
-    // $action = new Slim\Completion; 
-    // $action -> mail();
+    $action = new App\Controller\Completion(); 
+    $action -> run();
+    $action -> mail();
 
     //まだ未作成
     return $this->renderer->render($response, 'completion.php', $args);

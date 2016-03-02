@@ -7,7 +7,7 @@
 </head>
 
 <body>
-
+<section class="box fourcorners">
   <h1>CHECK OUT</h1>
   <p>内容に誤りがないか、マジでご確認ください！</p>
   <div id="container">
@@ -26,10 +26,10 @@
     <form action="contact" method="post" id="confirm">
       <input type="submit" name="submit" value="戻る" id="btn">
     </form>
-    　
     <form action="completion" method="post" id="confirm">
       <input type="submit" name="submit" value="投稿する" id="btn">
     </form>
+      <audio autoplay src="hurry-overworld.mp3"></audio>
     </div>
   </div>
   </section>

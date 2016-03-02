@@ -14,6 +14,7 @@ if (PHP_SAPI == 'cli-server') {
 }
 
 require __DIR__ . '/../vendor/autoload.php';
+require_once(__DIR__ . '/../src/config.php');
 
 define('SITE_URL', 'http://' . $_SERVER['HTTP_HOST']);
 

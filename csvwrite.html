@@ -1,0 +1,34 @@
+<?php
+
+$fp = fopen('codesniffer.20160224062802.txt', 'r');
+$csv = fopen('terms.errors.txt', 'w');
+$rows = array();
+
+if ($fp){
+    if (flock($fp, LOCK_SH)){
+        while (!feof($fp)) {
+            $buffer = fgets($fp);
+            print($buffer.'<br>');
+            if (preg_match ("/^FILE/", $buffer)){
+                array_push($rows, $buffer);
+                fputcsv ($csv, $buffer)
+            }
+        }
+
+        flock($fp, LOCK_UN);
+    }else{
+        print('ファイルロックに失敗しました');
+    }
+
+    fputcsv ($csv, $raws)
+}
+
+$flag = fclose($fp);
+$flag = fclose($csv);
+
+
+if ($flag){
+    print('無事クローズしました');
+}else{
+    print('クローズに失敗しました');
+}

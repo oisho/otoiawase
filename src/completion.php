@@ -11,7 +11,7 @@
         <?php echo htmlspecialchars($_SESSION['name']); ?>様
       </p>
       <p>
-        <?php echo htmlspecialchars($_SESSION['test']); ?>
+<!--         <?php echo htmlspecialchars($_SESSION['test']); ?> -->
         お問い合わせありがとうございました。
       </p>
       <p>
