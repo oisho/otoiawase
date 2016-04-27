@@ -45,7 +45,7 @@ END;
     $messageToCliant = htmlspecialchars($_SESSION['name']).$messageToCliant.htmlspecialchars(date('y/m/d h:m:s'))."\n\nお問い合わせ内容\n".htmlspecialchars($_SESSION['opinion']);
 
     mb_send_mail("ijichi@aveclab.com", "お問い合わせを受け付けました。", $messageToCliant, "From: hoge@example.com");
-    echo $messageToCliant; // テスト
+    // echo $messageToCliant; // テスト
     return mb_send_mail(htmlspecialchars($_SESSION['email']), "お問い合わせを受け付けました。", $messageToCliant, "From: hoge@example.com");
   }
   
